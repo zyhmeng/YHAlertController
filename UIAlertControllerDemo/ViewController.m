@@ -40,11 +40,14 @@
     }];
     UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
         NSLog(@"click cancel");
+        
     }];
     [alertVC addAction:cancelAction];
     [alertVC addAction:okAction];
     [alertVC addTextFieldWithConfigurationHandler:^(UITextField * _Nonnull textField) {
         textField.placeholder = @"Please enter your username";
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleTextFieldTextDidChangeNotification:) name:UITextFieldTextDidChangeNotification object:textField];
+
     }];
     [alertVC addTextFieldWithConfigurationHandler:^(UITextField * _Nonnull textField) {
         textField.placeholder = @"Please enter your password";
@@ -65,6 +68,10 @@
         NSLog(@"two");
     }];
 }
-
+- (void)handleTextFieldTextDidChangeNotification:(NSNotification *)notification
+{
+    UITextField *textField = notification.object;
+    NSLog(@"%@",textField.text);
+}
 
 @end

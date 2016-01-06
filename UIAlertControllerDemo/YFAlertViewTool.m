@@ -8,6 +8,11 @@
 
 #import "YFAlertViewTool.h"
 
+@interface YFAlertViewTool ()
+
+@property (nonatomic) int ftCount;
+@end
+
 @implementation YFAlertViewTool
 + (void)showActionSheetStyleInViewController:(nonnull UIViewController *)viewController withTitle:(nullable NSString *)title message:(nullable NSString *)message cancelTitle:(nullable NSString *)cancelTitle otherOneTitle:(nullable NSString *)oneTitle twoTitle:(nullable NSString *)twoTitle cancelHandler:(void(^ __nullable)(UIAlertAction * _Nonnull action))cancelAction oneHandler:(void(^ __nullable)(UIAlertAction * _Nonnull action))oneAction twoHandler:(void(^ __nullable)(UIAlertAction * _Nonnull action))twoAction
 {
@@ -61,4 +66,6 @@
     
     [viewController presentViewController:controller animated:YES completion:nil];
 }
+
+
 @end
