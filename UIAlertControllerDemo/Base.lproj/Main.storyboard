@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -15,11 +16,73 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uGV-GA-gH6">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" title="ActionSheet"/>
+                                <connections>
+                                    <action selector="actionSheetStyle:" destination="BYZ-38-t0r" eventType="touchUpInside" id="pF8-yd-KjP"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Nh-7a-Hen">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" title="Alert"/>
+                                <connections>
+                                    <action selector="alertStyle:" destination="BYZ-38-t0r" eventType="touchUpInside" id="D3o-Cl-d1e"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ipu-wT-UqR">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" title="TextFieldAlert"/>
+                                <connections>
+                                    <action selector="textFieldAlert:" destination="BYZ-38-t0r" eventType="touchUpInside" id="u6y-61-UFF"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="1Nh-7a-Hen" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="CGk-hg-MZq"/>
+                            <constraint firstItem="ipu-wT-UqR" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="YZ8-Cd-YWd"/>
+                            <constraint firstItem="1Nh-7a-Hen" firstAttribute="top" secondItem="ipu-wT-UqR" secondAttribute="bottom" constant="77" id="bJY-Yx-ogs"/>
+                            <constraint firstItem="uGV-GA-gH6" firstAttribute="centerX" secondItem="1Nh-7a-Hen" secondAttribute="centerX" id="cY0-R3-zDa"/>
+                            <constraint firstItem="1Nh-7a-Hen" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="eEg-0S-bLl"/>
+                            <constraint firstItem="uGV-GA-gH6" firstAttribute="top" secondItem="1Nh-7a-Hen" secondAttribute="bottom" constant="85" id="lgI-EE-3cj"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="uGV-GA-gH6"/>
+                                <exclude reference="1Nh-7a-Hen"/>
+                                <exclude reference="ipu-wT-UqR"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="CGk-hg-MZq"/>
+                                <exclude reference="bJY-Yx-ogs"/>
+                                <exclude reference="eEg-0S-bLl"/>
+                                <exclude reference="YZ8-Cd-YWd"/>
+                                <exclude reference="cY0-R3-zDa"/>
+                                <exclude reference="lgI-EE-3cj"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="uGV-GA-gH6"/>
+                                <include reference="1Nh-7a-Hen"/>
+                                <include reference="ipu-wT-UqR"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="CGk-hg-MZq"/>
+                                <include reference="bJY-Yx-ogs"/>
+                                <include reference="eEg-0S-bLl"/>
+                                <include reference="YZ8-Cd-YWd"/>
+                                <include reference="cY0-R3-zDa"/>
+                                <include reference="lgI-EE-3cj"/>
+                            </mask>
+                        </variation>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="181.5" y="219.75"/>
         </scene>
     </scenes>
 </document>

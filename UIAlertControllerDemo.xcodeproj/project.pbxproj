@@ -15,6 +15,7 @@
 		069407991C3265A90021D62E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 069407971C3265A90021D62E /* LaunchScreen.storyboard */; };
 		069407A41C3265A90021D62E /* UIAlertControllerDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 069407A31C3265A90021D62E /* UIAlertControllerDemoTests.m */; };
 		069407AF1C3265A90021D62E /* UIAlertControllerDemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 069407AE1C3265A90021D62E /* UIAlertControllerDemoUITests.m */; };
+		069407C51C327B3E0021D62E /* YFAlertViewTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 069407C41C327B3E0021D62E /* YFAlertViewTool.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,8 @@
 		069407AA1C3265A90021D62E /* UIAlertControllerDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UIAlertControllerDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		069407AE1C3265A90021D62E /* UIAlertControllerDemoUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UIAlertControllerDemoUITests.m; sourceTree = "<group>"; };
 		069407B01C3265A90021D62E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		069407C31C327B3E0021D62E /* YFAlertViewTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YFAlertViewTool.h; sourceTree = "<group>"; };
+		069407C41C327B3E0021D62E /* YFAlertViewTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YFAlertViewTool.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +106,8 @@
 			children = (
 				0694078C1C3265A90021D62E /* AppDelegate.h */,
 				0694078D1C3265A90021D62E /* AppDelegate.m */,
+				069407C31C327B3E0021D62E /* YFAlertViewTool.h */,
+				069407C41C327B3E0021D62E /* YFAlertViewTool.m */,
 				0694078F1C3265A90021D62E /* ViewController.h */,
 				069407901C3265A90021D62E /* ViewController.m */,
 				069407921C3265A90021D62E /* Main.storyboard */,
@@ -270,6 +275,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				069407C51C327B3E0021D62E /* YFAlertViewTool.m in Sources */,
 				069407911C3265A90021D62E /* ViewController.m in Sources */,
 				0694078E1C3265A90021D62E /* AppDelegate.m in Sources */,
 				0694078B1C3265A90021D62E /* main.m in Sources */,
