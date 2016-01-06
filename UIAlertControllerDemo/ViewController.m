@@ -21,7 +21,7 @@
 }
 - (IBAction)alertStyle:(id)sender {
     
-    [YFAlertViewTool showActionAlertStyleWithViewController:self title:@"hello" message:@"hello world" okTitle:@"OK" cancelTitlt:@"cancel" okBtnHandler:^(UIAlertAction * _Nonnull action) {
+    [YFAlertViewTool showActionAlertStyleInViewController:self title:@"hello" message:@"hello world" okTitle:@"OK" cancelTitlt:@"cancel" okBtnHandler:^(UIAlertAction * _Nonnull action) {
         
         NSLog(@"click OK");
     } cancelBtnHandler:^(UIAlertAction * _Nonnull action) {
@@ -57,7 +57,13 @@
 
 - (IBAction)actionSheetStyle:(id)sender {
     
-    [YFAlertViewTool showActionSheetStyleInViewController:self withTitle:@"Action Sheet" message:@"Action Sheet Style" cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitles:nil];
+    [YFAlertViewTool showActionSheetStyleInViewController:self withTitle:@"hello" message:@"hello world" cancelTitle:@"cancel" otherOneTitle:@"one" twoTitle:@"two" cancelHandler:^(UIAlertAction * _Nonnull action) {
+        NSLog(@"cancel");
+    } oneHandler:^(UIAlertAction * _Nonnull action) {
+        NSLog(@"one ");
+    } twoHandler:^(UIAlertAction * _Nonnull action) {
+        NSLog(@"two");
+    }];
 }
 
 

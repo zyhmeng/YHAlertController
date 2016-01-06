@@ -10,18 +10,21 @@
 #import <UIKit/UIKit.h>
 @interface YFAlertViewTool : NSObject
 
++ (void)showActionSheetStyleInViewController:(nonnull UIViewController *)viewController withTitle:(nullable NSString *)title message:(nullable NSString *)message cancelTitle:(nullable NSString *)cancelTitle otherOneTitle:(nullable NSString *)oneTitle twoTitle:(nullable NSString *)twoTitle cancelHandler:(void(^ __nullable)(UIAlertAction * _Nonnull action))cancelAction oneHandler:(void(^ __nullable)(UIAlertAction * _Nonnull action))oneAction twoHandler:(void(^ __nullable)(UIAlertAction * _Nonnull action))twoAction;
 /**
- *  sheetStyle
+ *  alertStyle
  *
- *  @param viewController         need show viewController
- *  @param title                  alert title
- *  @param message                alert message
- *  @param cancelButtonTitle      alert cancel title
- *  @param destructiveButtonTitle destrutive title
- *  @param otherButtonTitles      can add other title
+ *  @param viewController need show viewController
+ *  @param title          alert title
+ *  @param message        alert message
+ *  @param okTitle        ok titlt
+ *  @param cancelTitle    cancel title
+ *  @param okAction       handler ok button
+ *  @param cancelAction   handler cancel button
  *
  *  @return alertViewController
  */
-+ (nonnull instancetype)showActionSheetStyleInViewController:(nonnull UIViewController *)viewController withTitle:(nullable NSString *)title message:(nullable NSString *)message cancelButtonTitle:(nullable NSString *)cancelButtonTitle destructiveButtonTitle:(nullable NSString *)destructiveButtonTitle otherButtonTitles:(nullable NSArray *)otherButtonTitles;
-+ (nonnull instancetype)showActionAlertStyleWithViewController:(nonnull UIViewController *)viewController title:(nullable NSString *)title message:(nullable NSString *)message okTitle:(nullable NSString *)okTitle cancelTitlt:(nullable NSString *)cancelTitle okBtnHandler:(void(^ __nullable)(UIAlertAction * _Nonnull action))action cancelBtnHandler:(void(^ __nullable)(UIAlertAction * _Nonnull action))action;
++ (void)showActionAlertStyleInViewController:(nonnull UIViewController *)viewController title:(nullable NSString *)title message:(nullable NSString *)message okTitle:(nullable NSString *)okTitle cancelTitlt:(nullable NSString *)cancelTitle okBtnHandler:(void(^ __nullable)(UIAlertAction * _Nonnull action))okAction cancelBtnHandler:(void(^ __nullable)(UIAlertAction * _Nonnull action))cancelAction;
+
++ (void)ff;
 @end

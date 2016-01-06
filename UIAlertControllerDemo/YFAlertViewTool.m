@@ -9,32 +9,35 @@
 #import "YFAlertViewTool.h"
 
 @implementation YFAlertViewTool
-+ (instancetype)showActionSheetStyleInViewController:(UIViewController *)viewController withTitle:(NSString *)title message:(NSString *)message cancelButtonTitle:(NSString *)cancelButtonTitle destructiveButtonTitle:(NSString *)destructiveButtonTitle otherButtonTitles:(NSArray *)otherButtonTitles 
++ (void)showActionSheetStyleInViewController:(nonnull UIViewController *)viewController withTitle:(nullable NSString *)title message:(nullable NSString *)message cancelTitle:(nullable NSString *)cancelTitle otherOneTitle:(nullable NSString *)oneTitle twoTitle:(nullable NSString *)twoTitle cancelHandler:(void(^ __nullable)(UIAlertAction * _Nonnull action))cancelAction oneHandler:(void(^ __nullable)(UIAlertAction * _Nonnull action))oneAction twoHandler:(void(^ __nullable)(UIAlertAction * _Nonnull action))twoAction
 {
     UIAlertController *alertVC = [UIAlertController alertControllerWithTitle:title message:message preferredStyle:UIAlertControllerStyleActionSheet];
     
     __weak UIAlertController *controller = alertVC;
     
-    if (cancelButtonTitle) {
-        UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:cancelButtonTitle style:UIAlertActionStyleCancel handler:nil];
-        [controller addAction:cancelAction];
+    if (cancelTitle) {
+        UIAlertAction *cancel = [UIAlertAction actionWithTitle:cancelTitle style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+            cancelAction(action);
+        }];
+        [controller addAction:cancel];
     }
-    if (destructiveButtonTitle) {
-        UIAlertAction *destructiveAction = [UIAlertAction actionWithTitle:destructiveButtonTitle style:UIAlertActionStyleDestructive handler:nil];
-        [controller addAction:destructiveAction];
+    if (oneTitle) {
+        UIAlertAction *one = [UIAlertAction actionWithTitle:oneTitle style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+            oneAction(action);
+        }];
+        [controller addAction:one];
     }
-    for (NSUInteger i = 0; i < otherButtonTitles.count; i++) {
-        NSString *otherButtonTitle = otherButtonTitles[i];
-        
-        UIAlertAction *otherAction = [UIAlertAction actionWithTitle:otherButtonTitle style:UIAlertActionStyleDefault handler:nil];
-        [controller addAction:otherAction];
+    if (twoTitle) {
+        UIAlertAction *two = [UIAlertAction actionWithTitle:twoTitle style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+            twoAction(action);
+        }];
+        [controller addAction:two];
     }
-    
     [viewController presentViewController:controller animated:YES completion:nil];
-    return (YFAlertViewTool *)controller;
+    
 }
 
-+ (nonnull instancetype)showActionAlertStyleWithViewController:(nonnull UIViewController *)viewController title:(nullable NSString *)title message:(nullable NSString *)message okTitle:(nullable NSString *)okTitle cancelTitlt:(nullable NSString *)cancelTitle okBtnHandler:(void(^ __nullable)(UIAlertAction * _Nonnull action))okAction cancelBtnHandler:(void(^ __nullable)(UIAlertAction * _Nonnull action))cancelAction
++ (void)showActionAlertStyleInViewController:(nonnull UIViewController *)viewController title:(nullable NSString *)title message:(nullable NSString *)message okTitle:(nullable NSString *)okTitle cancelTitlt:(nullable NSString *)cancelTitle okBtnHandler:(void(^ __nullable)(UIAlertAction * _Nonnull action))okAction cancelBtnHandler:(void(^ __nullable)(UIAlertAction * _Nonnull action))cancelAction
 {
     UIAlertController *alertVC = [UIAlertController alertControllerWithTitle:title message:message preferredStyle:UIAlertControllerStyleAlert];
     
@@ -57,6 +60,5 @@
     
     
     [viewController presentViewController:controller animated:YES completion:nil];
-    return (YFAlertViewTool *)controller;
 }
 @end
